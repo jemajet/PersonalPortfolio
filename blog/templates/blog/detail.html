@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.6">
-	<title>Mark J Wright</title>
+	<title>{{blog.title}}</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -57,46 +57,24 @@
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.linkedin.com/in/markjwright/" target="_blank">Linkedin</a>
 					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' %}">Resume</a>
-					<a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+					<a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
 				</div>
 			</div>
 		</nav>
 	</header>
 
 	<main role="main">
-
-		<section class="jumbotron text-center">
-			<div class="container">
-				<h1>Hi, I'm Mark.</h1>
-				<p class="lead text-muted">I'm a senior at MIT studying computer science and electrical engineering. I have interests in computer systems, machine learning, and full-stack software development, but I'm also passionate about creative hardware solutions to common problems. This website was created as a beginning lesson to Bootstrap and Django 2</p>
-				<p>
-					<a href="mailto:mjwright@mit.edu" class="btn btn-primary my-2">Email Me</a>
-					<!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
-				</p>
-				<img class="img-fluid" src="{% static 'Mark_Wright.jpg' %}" height="200" width=200/> 
-			</div>
-		</section>
-
-		<div class="album py-5 bg-light">
-			<div class="container">
-
-				<div class="row">
-					{% for job in jobs.all %}
-					<div class="col-md-4">
-						<div class="card mb-4 shadow-sm">
-							<h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4>
-							<!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
-							<img class="card-img-top" src="{{ job.image.url }}">
-							<div class="card-body">
-								<p class="card-text">{{ job.summary }}</p>
-							</div>
-						</div>
-					</div>
-					{% endfor %}					
-				</div>
-			</div>
+		<div class="container">
+			<h1 class="pt-2">{{blog.title}}</h1></a>
+			<p>{{blog.pub_date}}</p>
+			<img class="img-fluid" src="{{blog.image.url}}" width="400"/>
+			<br />
+			<br />
+			<p>
+				{{blog.body}}
+			</p>
+			<!-- </div> -->
 		</div>
-
 	</main>
 
 	<footer class="text-muted">
@@ -108,7 +86,7 @@
 			</p>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://startbootstrap.com/template-overviews/freelancer/" target="_blank">
-					<img src="https://pluspng.com/img-png/bootstrap-png-bootstrap-512.png" alt="Bootstrap" style="padding:5px; border-radius: 10px; height: 120px;">
+					<img src="https://pluspng.com/img-png/bootstrap-png-bootstrap-512.png" alt="Bootstrap" style="padding:5px; border-radius: 10px; height: 100px;">
 				</a>
 			</div>
 			<div style="display: inline-block; margin: 0 auto;">
