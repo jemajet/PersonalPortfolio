@@ -12,7 +12,7 @@ class Job(models.Model):
         if len(self.summary.split(" ")) < max_words:
             return self.summary
         else:
-            return " ".join(self.summary.split(" ")[:max_words]) + "... Read More"
+            return " ".join(self.summary.split(" ")[:max_words]) + "..."
 
     def __str__(self):
         return self.title

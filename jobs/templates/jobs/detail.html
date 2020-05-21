@@ -57,8 +57,7 @@
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.linkedin.com/in/markjwright/" target="_blank">Linkedin</a>
 					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' % } " target="_blank">Resume</a>
-					<a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
-					<a class="nav-item nav-link active" href="{% url 'allclasses' %}">Coursework</a>
+					<a class="nav-item nav-link" href="{% url 'allclasses' %}">Coursework</a>
 				</div>
 			</div>
 		</nav>
@@ -66,14 +65,16 @@
 
 	<main role="main">
 		<div class="container">
-			<h1 class="pt-2">{{job.title}}</h1>
-			
-			<img class="img-fluid" src="{{job.image.url}}" width="400"/>
+			<h1 class="pt-2 text-center">{{job.title}}</h1>
 			<br />
+			<img class="img-fluid rounded mx-auto d-block" src="{{job.image.url}}" width="400"/>
 			<br />
+			<h3 class="font-weight-bold">Description</h3>
 			<p>
 				{{job.summary}}
 			</p>
+			<br />
+			<br />
 			<!-- </div> -->
 		</div>
 	</main>
@@ -87,17 +88,17 @@
 			</p>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://startbootstrap.com/template-overviews/freelancer/" target="_blank">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png" alt="Bootstrap" style="padding:5px; border-radius: 10px; height: 100px;">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png" alt="Bootstrap" style="padding:5px; border-radius: 10px; height: 69px;">
 				</a>
 			</div>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://aws.amazon.com" target="_blank">
-					<img src="https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB_stacked_REV_SQ.91cd4af40773cbfbd15577a3c2b8a346fe3e8fa2.png" alt="AWS" style="padding:5px; border-radius: 10px; height: 100px;">
+					<img src="https://d1.awsstatic.com/logos/aws-logo-lockups/poweredbyaws/PB_AWS_logo_RGB_stacked_REV_SQ.91cd4af40773cbfbd15577a3c2b8a346fe3e8fa2.png" alt="AWS" style="padding:5px; border-radius: 10px; height: 69px;">
 				</a>
 			</div>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://djangoproject.com" target="_blank">
-					<img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django 2" style="padding:5px; border-radius: 10px; height: 100px;">
+					<img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django 2" style="padding:5px; border-radius: 10px; height: 69px;">
 				</a>
 			</div>
 		</div>
