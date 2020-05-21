@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.6">
-	<title>Mark Blog</title>
+	<title>MIT Classwork</title>
 
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -66,20 +66,20 @@
 
 	<main role="main">
 		<div class="container">
-			<h1 class="text-center pt-3">Welcome to Mark's Blog!</h1>
+			<h1 class="text-center pt-3">Mark's Courses at MIT</h1>
 			<br />
-			<br />
-			<h2>Latest Posts</h2>
+
+			<img class="img-fluid rounded mx-auto d-block" src="https://www.abc.net.au/cm/rimage/10972904-3x2-xlarge.jpg?v=4" width=500/>
 			<hr />
-			{% for blog in blogs.all %}
+			{% for clas in classes.all %}
 			<!-- <div class="container text-left"> -->
-				<a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
-				{{blog.pub_date_pretty}}
+				<a href="{% url 'class_detail' clas.id %}"><h3>{{clas.title}}</h3></a>
+				{{clas.class_year}}
 				<br />
-				<img class="img-fluid" src="{{blog.image.url}}" height=200 width=200 />
+				<img class="img-fluid" src="{{clas.image.url}}" height=200 width=200 />
 				<br />
 				<p>
-					{{blog.summary}}
+					{{clas.short_summary}}
 				</p>
 				<!-- </div> -->
 				{% endfor %}

@@ -1,9 +1,12 @@
 from django.db import models
 
+# Create your models here.
 
-class Job(models.Model):
-    # Job has an image of the job, a summary, and a title
+
+class Class(models.Model):
+        # Job has an image of the job, a summary, and a title
     title = models.CharField(max_length=200)
+    class_year = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/')
     summary = models.TextField()
 

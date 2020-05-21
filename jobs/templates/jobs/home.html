@@ -56,8 +56,9 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.linkedin.com/in/markjwright/" target="_blank">Linkedin</a>
-					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' %}">Resume</a>
+					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' % } " target="_blank">Resume</a>
 					<a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+					<a class="nav-item nav-link active" href="{% url 'allclasses' %}">Coursework</a>
 				</div>
 			</div>
 		</nav>
@@ -77,18 +78,18 @@
 			</div>
 		</section>
 
+		<h2 class="text-center font-weight-bold">Jobs & Projects</h2>
 		<div class="album py-5 bg-light">
 			<div class="container">
-
 				<div class="row">
 					{% for job in jobs.all %}
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4>
+							<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
 							<!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
 							<img class="card-img-top" src="{{ job.image.url }}">
 							<div class="card-body">
-								<p class="card-text">{{ job.summary }}</p>
+								<p class="card-text">{{ job.short_summary }}</p>
 							</div>
 						</div>
 					</div>
