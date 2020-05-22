@@ -106,7 +106,7 @@
 			<div class="container">
 				<div class="row">
 					{% for job in jobs.all %}
-						{% if job.job_type == "project" %}
+						{% if job.job_type.lower == "project" %}
 							<div class="col-md-4">
 								<div class="card mb-4 shadow-sm">
 									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
@@ -128,7 +128,7 @@
 			<div class="container">
 				<div class="row">
 					{% for job in jobs.all %}
-						{% if job.job_type == "extracurricular" %}
+						{% if job.job_type.lower == "extracurricular" %}
 							<div class="col-md-4">
 								<div class="card mb-4 shadow-sm">
 									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
@@ -150,7 +150,7 @@
 			<div class="container">
 				<div class="row">
 					{% for job in jobs.all %}
-						{% if job.job_type == "skill" %}
+						{% if job.job_type.lower == "skill" %}
 							<div class="col-md-4">
 								<div class="card mb-4 shadow-sm">
 									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
