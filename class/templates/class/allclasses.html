@@ -74,7 +74,7 @@
 			<h2 class="text-center">Electrical Engineering and Computer Science (Course 6)</h2>
 			<div class="container">
 				<div class="row">
-					{% for clas in classes.all %}
+					{% for clas in classes.all reversed%}
 						{% if "6." in clas.title%}
 							<div class="col-md-4">
 								<div class="card mb-4 shadow-sm">
@@ -93,7 +93,7 @@
 			<h2 class="text-center">General Institute Requirements</h2>
 			<div class="container">
 				<div class="row">
-					{% for clas in classes.all %}
+					{% for clas in classes.all reversed %}
 						{% if "6." not in clas.title%}
 							<div class="col-md-4">
 								<div class="card mb-4 shadow-sm">
