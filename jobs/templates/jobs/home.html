@@ -77,8 +77,10 @@
 			</div>
 		</section>
 
-		<h2 class="text-center font-weight-bold">Jobs & Projects</h2>
+		<hr>
+		<h4 class="text-center">To expand a section, simply click on the section's title</h4>
 		<div class="album py-5 bg-light">
+			<h2 class="text-center font-weight-bold">Jobs & Projects</h2>
 			<div class="container">
 				<div class="row">
 					{% for job in jobs.all %}
@@ -103,7 +105,7 @@
 			<p>
 				&copy; Mark Wright {% now "Y" %}
 				<br>
-				Updated May 5, 2020
+				Updated {% now "M d, Y"%}
 			</p>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://startbootstrap.com/template-overviews/freelancer/" target="_blank">

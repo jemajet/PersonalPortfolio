@@ -56,7 +56,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.linkedin.com/in/markjwright/" target="_blank">Linkedin</a>
-					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' % } " target="_blank">Resume</a>
+					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' %}" target="_blank">Resume</a>
 					<a class="nav-item nav-link active" href="{% url 'allclasses' %}">Coursework</a>
 				</div>
 			</div>
@@ -113,7 +113,7 @@
 			<p>
 				&copy; Mark Wright {% now "Y" %}
 				<br>
-				Updated May 5, 2020
+				Updated {% now "M d, Y"%}
 			</p>
 			<div style="display: inline-block; margin: 0 auto;">
 				<a href="https://startbootstrap.com/template-overviews/freelancer/" target="_blank">
