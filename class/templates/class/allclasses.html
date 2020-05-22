@@ -69,16 +69,39 @@
 		<h1 class="text-center pt-3">My Courses at MIT</h1>
 		<img class="img-fluid rounded mx-auto d-block" src="https://www.abc.net.au/cm/rimage/10972904-3x2-xlarge.jpg?v=4" width=500/>
 		<hr />
+		<h4 class="text-center">To expand a course, simply click on the course title</h4>
 		<div class="album py-5 bg-light">
+			<h2 class="text-center">Electrical Engineering and Computer Science (Course 6)</h2>
 			<div class="container">
 				<div class="row">
 					{% for clas in classes.all %}
-					<div class="col-md-4">
-						<div class="card mb-4 shadow-sm">
-							<a href="{% url 'class_detail' clas.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{clas.title}}</h4></a>
-							<h5 class="text-center">{{clas.class_year}}</h5>
-						</div>
-					</div>
+						{% if "6." in clas.title%}
+							<div class="col-md-4">
+								<div class="card mb-4 shadow-sm">
+									<a href="{% url 'class_detail' clas.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{clas.title}}</h4></a>
+									<h5 class="text-center">{{clas.class_year}}</h5>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}					
+				</div>
+			</div>
+		</div>
+
+		<hr>
+		<div class="album py-5 bg-light">
+			<h2 class="text-center">General Institute Requirements</h2>
+			<div class="container">
+				<div class="row">
+					{% for clas in classes.all %}
+						{% if "6." not in clas.title%}
+							<div class="col-md-4">
+								<div class="card mb-4 shadow-sm">
+									<a href="{% url 'class_detail' clas.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{clas.title}}</h4></a>
+									<h5 class="text-center">{{clas.class_year}}</h5>
+								</div>
+							</div>
+						{% endif %}
 					{% endfor %}					
 				</div>
 			</div>
