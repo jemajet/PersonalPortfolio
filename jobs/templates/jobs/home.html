@@ -78,27 +78,7 @@
 		</section>
 
 		<hr>
-		<h4 class="text-center">To expand a section, simply click on the section's title</h4>
-		<div class="album py-5 bg-light">
-			<h2 class="text-center font-weight-bold">Internships/Research Roles</h2>
-			<div class="container">
-				<div class="row">
-					{% for job in jobs.all %}
-						{% if job.job_type.lower == "job" %}
-							<div class="col-md-4">
-								<div class="card mb-4 shadow-sm">
-									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
-									<img class="card-img-top" src="{{ job.image.url }}">
-									<div class="card-body">
-										<p class="card-text">{{ job.short_summary }}</p>
-									</div>
-								</div>
-							</div>
-						{% endif %}
-					{% endfor %}					
-				</div>
-			</div>
-		</div>
+		<h4 class="text-center">To expand a card, click on the card's title</h4>
 
 		<hr>
 		<div class="album py-5 bg-light">
@@ -122,6 +102,28 @@
 			</div>
 		</div>
 
+		<div class="album py-5 bg-light">
+			<h2 class="text-center font-weight-bold">Internships/Research Roles</h2>
+			<div class="container">
+				<div class="row">
+					{% for job in jobs.all %}
+						{% if job.job_type.lower == "job" %}
+							<div class="col-md-4">
+								<div class="card mb-4 shadow-sm">
+									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
+									<img class="card-img-top" src="{{ job.image.url }}">
+									<div class="card-body">
+										<p class="card-text">{{ job.short_summary }}</p>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}					
+				</div>
+			</div>
+		</div>
+
+
 		<hr>
 		<div class="album py-5 bg-light">
 			<h2 class="text-center font-weight-bold">Extracurriculars</h2>
@@ -142,22 +144,49 @@
 					{% endfor %}					
 				</div>
 			</div>
-		</div>
+		</div>				
 
 		<hr>
 		<div class="album py-5 bg-light">
 			<h2 class="text-center font-weight-bold">Skills</h2>
 			<div class="container">
+				<h3 class="text-muted">Proficient</h3>
 				<div class="row">
 					{% for job in jobs.all %}
-						{% if job.job_type.lower == "skill" %}
-							<div class="col-md-4">
+						{% if job.job_type.lower == "skill" and job.summary.lower == "proficient"%}
+							<div class="col-4">
 								<div class="card mb-4 shadow-sm">
-									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
-									<img class="card-img-top" src="{{ job.image.url }}">
-									<div class="card-body">
-										<p class="card-text">{{ job.short_summary }}</p>
-									</div>
+									<h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}					
+				</div>
+			</div>
+
+			<div class="container">
+				<h3 class="text-muted">Competent</h3>
+				<div class="row">
+					{% for job in jobs.all %}
+						{% if job.job_type.lower == "skill" and job.summary.lower == "competent"%}
+							<div class="col-4">
+								<div class="card mb-4 shadow-sm">
+									<h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}					
+				</div>
+			</div>
+
+			<div class="container">
+				<h3 class="text-muted">Familiar</h3>
+				<div class="row">
+					{% for job in jobs.all %}
+						{% if job.job_type.lower == "skill" and job.summary.lower == "familiar"%}
+							<div class="col-4">
+								<div class="card mb-4 shadow-sm">
+									<h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4>
 								</div>
 							</div>
 						{% endif %}
