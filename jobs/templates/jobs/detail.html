@@ -57,7 +57,7 @@
 				<div class="navbar-nav ml-auto">
 					<a class="nav-item nav-link" href="https://www.linkedin.com/in/markjwright/" target="_blank">Linkedin</a>
 					<a class="nav-item nav-link" href="{% static 'MarkWrightResume.pdf' %}" target="_blank">Resume</a>
-					<a class="nav-item nav-link active" href="{% url 'allclasses' %}">Coursework</a>
+					<a class="nav-item nav-link" href="{% url 'allclasses' %}">Coursework</a>
 				</div>
 			</div>
 		</nav>
@@ -70,8 +70,9 @@
 			<img class="img-fluid rounded mx-auto d-block" src="{{job.image.url}}"/>
 			<br />
 			<h3 class="font-weight-bold">Description</h3>
+			<hr>
 			<p>
-				{{job.summary}}
+				{{job.summary | safe}}
 			</p>
 			<br />
 			<br />

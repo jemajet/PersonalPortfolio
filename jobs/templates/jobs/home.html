@@ -92,7 +92,7 @@
 									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
 									<img class="card-img-top" src="{{ job.image.url }}">
 									<div class="card-body">
-										<p class="card-text">{{ job.short_summary }}</p>
+										<p class="card-text">{{ job.short_summary | safe}}</p>
 									</div>
 								</div>
 							</div>

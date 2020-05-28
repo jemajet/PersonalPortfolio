@@ -67,14 +67,14 @@
 		<div class="container">
 			<h1 class="pt-2">{{cur_class.title}}</h1></a>
 			<h3>{{cur_class.class_year}}</h3>
-			<br />
+			<hr>
 			<p>
 				<b>Course description:</b>
-				{{cur_class.class_description}}
+				{{cur_class.class_description | safe}}
 			</p>
 			<p>
 				<b>Topics include:</b>
-				{{cur_class.summary}}
+				{{cur_class.summary | safe }} 
 			</p>
 			<!-- </div> -->
 			<br />
