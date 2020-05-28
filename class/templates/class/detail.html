@@ -70,11 +70,11 @@
 			<hr>
 			<p>
 				<b>Course description:</b>
-				{{cur_class.class_description | linebreaks}}
+				{{cur_class.class_description | safe}}
 			</p>
 			<p>
 				<b>Topics include:</b>
-				{{cur_class.summary | linebreaks}} 
+				{{cur_class.summary | safe }} 
 			</p>
 			<!-- </div> -->
 			<br />
