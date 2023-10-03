@@ -81,6 +81,28 @@
 		<h4 class="text-center">To expand a card, click on the card's title</h4>
 
 		<hr>
+
+		<div class="album py-5 bg-light">
+			<h2 class="text-center font-weight-bold">Publications</h2>
+			<div class="container">
+				<div class="row">
+					{% for job in jobs.all %}
+						{% if job.job_type.lower == "publications" %}
+							<div class="col-md-4">
+								<div class="card mb-4 shadow-sm">
+									<a href="{% url 'job_detail' job.id %}"><h4 class="card-title text-center text-dark font-weight-bold" style="margin: 5px; padding: 5px;">{{job.title}}</h4></a>
+									<img class="card-img-top" src="{{ job.image.url }}">
+									<div class="card-body">
+										<p class="card-text">{{ job.short_summary | safe}}</p>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}					
+				</div>
+			</div>
+		</div>
+
 		<div class="album py-5 bg-light">
 			<h2 class="text-center font-weight-bold">Projects</h2>
 			<div class="container">
