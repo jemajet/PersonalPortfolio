@@ -12,5 +12,5 @@ db.sqlite3
 db.sqlite3-journal
 /media
 /static
-
+local-docker-passwd
 # End of https://www.gitignore.io/api/django

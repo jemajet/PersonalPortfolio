@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    build: ./PersonalPortfolio
+    command: ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
+    volumes:
+      - ./PersonalPortfolio:/app
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:9.5.24
+    environment:
+      - POSTGRES_DB=portfoliodb
+      - POSTGRES_USER=djangodb
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./local-docker-passwd:/run/secrets/postgres-passwd
+
+volumes:
+  postgres_data:
