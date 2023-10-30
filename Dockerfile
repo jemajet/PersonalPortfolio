@@ -1,17 +1,17 @@
-# Use an official Python runtime as a parent image
-FROM python:3.5.2
+# Use a Python base image; you can also opt for a specific version like python:3.8-alpine for a smaller image
+FROM python:3.5.2 as base
 
-# Set the working directory to /app
-WORKDIR /app
+# set work directory
+WORKDIR /usr/src/app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
-
-# Run gunicorn
-CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+# copy project
+COPY . .
